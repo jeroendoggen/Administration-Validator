@@ -1,0 +1,7 @@
+Build summary:
+--------------
+ Total exams: 
+ Total slides: 
+ Total courses: 
+ Missing files: 
+ Bad filenames: 

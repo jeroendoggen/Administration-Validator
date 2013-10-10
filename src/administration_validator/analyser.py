@@ -1,10 +1,12 @@
 ﻿"""
-    Blackboard Grade center analyser: unzipper
-    A tool to analyse assignments downloaded from the Blackboard grade center
+    Administration Validator
     Copyright 2013, Jeroen Doggen, jeroendoggen@gmail.com
 """
 
+
 from __future__ import print_function, division  # We require Python 2.6+
+
+import os
 
 from administration_validator.logger import Logger
 
@@ -19,7 +21,23 @@ class Analyser():
         self.reporter = reporter
 
     def run(self):
+        """ Run all tests, staring narrowing down the scope step by step """
+        self.check_folders()
         self.check_file("dummy filename")
+
+    def check_folders(self):
+        for folder in self.settings.folders_list:
+            path=os.path.join(os.getcwd(), self.settings.folder_prefix, folder)
+            if (os.path.isdir(path)):
+                print("Found folder: " + folder)
+                for subfolder in self.settings.subfolders_list:
+                    subpath=os.path.join(path, subfolder)
+                    if (os.path.isdir(subpath)):
+                        print("Found subfolder: " + subfolder)
+
+    def check_folder(self, filename):
+        """ Check if a file exists """
+        pass
 
     def check_file(self, filename):
         """ Check if a file exists """

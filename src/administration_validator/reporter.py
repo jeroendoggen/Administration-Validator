@@ -1,6 +1,5 @@
 ﻿"""
-    Blackboard Grade center analyser: reporter
-    A tool to analyse assignments downloaded from the Blackboard grade center
+    Administration Validator
     Copyright 2013, Jeroen Doggen, jeroendoggen@gmail.com
 """
 
